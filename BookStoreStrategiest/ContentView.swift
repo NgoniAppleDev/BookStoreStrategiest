@@ -8,17 +8,27 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var salesViewModel: SalesViewModel = .preview
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        NavigationStack {
+            List {
+                
+                NavigationLink(destination: DetailBookSalesView(salesViewModel: salesViewModel)) {
+                    SimpleBookSalesView(salesViewModel: salesViewModel)
+                }
+                
+            }
+            .navigationTitle("Book Store Stats")
         }
-        .padding()
     }
 }
 
 #Preview {
     ContentView()
 }
+
+
+
+
+

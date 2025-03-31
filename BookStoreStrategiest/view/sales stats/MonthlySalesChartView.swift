@@ -19,6 +19,11 @@ struct MonthlySalesChartView: View {
                 y: .value("Sales", sale.quantity)
             )
         }
+        .chartXAxis {
+            AxisMarks {
+                AxisValueLabel(format: .dateTime.month(.abbreviated), centered: true)
+            }
+        }
     }
 }
 
