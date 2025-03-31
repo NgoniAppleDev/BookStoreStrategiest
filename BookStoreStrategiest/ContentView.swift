@@ -14,8 +14,16 @@ struct ContentView: View {
         NavigationStack {
             List {
                 
-                NavigationLink(destination: DetailBookSalesView(salesViewModel: salesViewModel)) {
-                    SimpleBookSalesView(salesViewModel: salesViewModel)
+                Section {
+                    NavigationLink(destination: DetailBookSalesView(salesViewModel: salesViewModel)) {
+                        SimpleBookSalesView(salesViewModel: salesViewModel)
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: SalesByWeekDayView(salesViewModel: salesViewModel)) {
+                        SimpleSalesByWeekdayView(salesViewModel: salesViewModel)
+                    }
                 }
                 
             }
