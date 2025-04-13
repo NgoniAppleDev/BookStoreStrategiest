@@ -26,6 +26,12 @@ struct ContentView: View {
                     }
                 }
                 
+                Section {
+                    NavigationLink(destination: SalesPerBookCategoryView(salesViewModel: salesViewModel)) {
+                        SimpleSalesPerBookCategoryView(salesViewModel: salesViewModel)
+                    }
+                }
+                
             }
             .navigationTitle("Book Store Stats")
         }
