@@ -57,9 +57,15 @@ struct WeeklySalesChartView: View {
             }
             .padding(6)
             .background {
+#if os(iOS)
                 RoundedRectangle(cornerRadius: 4)
                     .fill(Color(.systemBackground))
                     .shadow(color: .blue, radius: 2)
+#else
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(Color(NSColor.controlBackgroundColor))
+                    .shadow(color: .blue, radius: 2)
+#endif
             }
         }
     }

@@ -12,7 +12,7 @@ struct ContentView: View {
     @State private var expensesViewModel: ExpensesViewModel = .preview
     
     var body: some View {
-        NavigationStack {
+        NavigationSplitView {
             List {
                 
                 Section {
@@ -41,6 +41,8 @@ struct ContentView: View {
                 
             }
             .navigationTitle("Book Store Stats")
+        } detail: {
+            Text("Select a chart")
         }
     }
 }
