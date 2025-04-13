@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var salesViewModel: SalesViewModel = .preview
+    @State private var expensesViewModel: ExpensesViewModel = .preview
     
     var body: some View {
         NavigationStack {
@@ -29,6 +30,12 @@ struct ContentView: View {
                 Section {
                     NavigationLink(destination: SalesPerBookCategoryView(salesViewModel: salesViewModel)) {
                         SimpleSalesPerBookCategoryView(salesViewModel: salesViewModel)
+                    }
+                }
+                
+                Section {
+                    NavigationLink(destination: DetailExpensesView(expensesViewModel: expensesViewModel)) {
+                        SimpleExpensesLineChartView(expensesViewModel: expensesViewModel)
                     }
                 }
                 

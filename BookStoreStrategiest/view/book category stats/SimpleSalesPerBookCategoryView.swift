@@ -26,7 +26,7 @@ struct SimpleSalesPerBookCategoryView: View {
                 .opacity(salesViewModel.bestSellingCategory?.category == data.category ? 1 : 0.3)
             }
             .aspectRatio(1, contentMode: .fit)
-            .frame(height: 100)
+            .frame(height: 90)
         }
     }
 }
